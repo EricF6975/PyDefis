@@ -4,6 +4,8 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 from matplotlib import pyplot
+import os
+import configparser
 
 print("-----  Message des étoiles partie 2 --------")
 
@@ -13,8 +15,13 @@ def calc_coord(n):
      print(f"(x,y) : {x},{y}")
      return (x,y)
 
+config=configparser.ConfigParser()
+chemin_courant=os.getcwd()
+chemin_fich_conf=chemin_courant+'\\fich_config.ini'
+config.read(chemin_fich_conf)
+path=config['chemin_acces']['chem_mess_etoiles']
 
-path='C:\\Users\\EFEUERSTEIN\Documents\\Formations\\Python\\pyDefi\\Message_des_étoiles\\telescope02\\*.png'
+path=path+'telescope02\\*.png'
 
 liste_toutes_img=[]
 
@@ -32,17 +39,25 @@ for file in glob.glob(path):
 
     for i in range(0,len(pixel_value)):
          pixel_sum.append(sum(pixel_value[i]))
+        #  if sum(pixel_value[i])>0:
+        #       print(f"index:{i} : {sum(pixel_value[i])}")
 
+
+    #print(f"somme pixel: {pixel_sum}")
+
+    #liste_toutes_img.append(list(img.getdata()))
     liste_toutes_img.append(pixel_sum)
 
+    
 
+#print(len(liste_toutes_img[0]))
 print(f"long liste toutes img {len(liste_toutes_img)}")
-
 
 
 df = pd.DataFrame(liste_toutes_img)
 print(type(df))
 print(df.info())
+#print(df.describe())
 
 
 liste_h_etoiles=[]
@@ -57,14 +72,16 @@ for i in range(0,640000):
                     #print(f"cnt:{cnt}") 
           if cnt==1:
                liste_h_etoiles.append(i)
+            #print(calc_coord(i))
 
+#print(f"index des etoiles apparues: {liste_h_etoiles}")
 
 list_coord_etoiles=[]
 for i in range(0,len(liste_h_etoiles)):
      #print(calc_coord(liste_h_etoiles[i]))
      list_coord_etoiles.append(calc_coord(liste_h_etoiles[i]))
 
-
+#print(list_coord_etoiles)
 
 x=[]
 y=[]
