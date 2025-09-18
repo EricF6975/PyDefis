@@ -39,18 +39,13 @@ for file in glob.glob(path):
 
     for i in range(0,len(pixel_value)):
          pixel_sum.append(sum(pixel_value[i]))
-        #  if sum(pixel_value[i])>0:
-        #       print(f"index:{i} : {sum(pixel_value[i])}")
 
 
-    #print(f"somme pixel: {pixel_sum}")
 
-    #liste_toutes_img.append(list(img.getdata()))
     liste_toutes_img.append(pixel_sum)
 
     
 
-#print(len(liste_toutes_img[0]))
 print(f"long liste toutes img {len(liste_toutes_img)}")
 
 
@@ -74,7 +69,6 @@ for i in range(0,640000):
                liste_h_etoiles.append(i)
             #print(calc_coord(i))
 
-#print(f"index des etoiles apparues: {liste_h_etoiles}")
 
 list_coord_etoiles=[]
 for i in range(0,len(liste_h_etoiles)):
