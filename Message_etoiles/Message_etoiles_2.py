@@ -80,6 +80,7 @@ for i in range(0,len(liste_h_etoiles)):
 
 #print(list_coord_etoiles)
 
+# Affichage de l'image
 x=[]
 y=[]
 for i in range(len(list_coord_etoiles)):
