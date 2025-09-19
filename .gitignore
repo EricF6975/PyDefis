@@ -1,6 +1,8 @@
 *.txt
 *.png
 *.ini
-*.cpython-313
+*.pyc
 *.json
 *.wav
+*.zip
+*.bck
