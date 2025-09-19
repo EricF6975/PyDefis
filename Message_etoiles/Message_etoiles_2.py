@@ -9,12 +9,14 @@ import configparser
 
 print("-----  Message des étoiles partie 2 --------")
 
+# calcul des coordonnées x,y en fonction de la position dans la liste (chaque ligne a 800 positions)
 def calc_coord(n):
      x=math.floor(n/800)
      y=n%800
      print(f"(x,y) : {x},{y}")
      return (x,y)
 
+# Récupération du chemin d'acces des fichiers image dans le fichier de config
 config=configparser.ConfigParser()
 chemin_courant=os.getcwd()
 chemin_fich_conf=chemin_courant+'\\fich_config.ini'
@@ -25,6 +27,7 @@ path=path+'telescope02\\*.png'
 
 liste_toutes_img=[]
 
+# Lecture de tous les fichiers image
 for file in glob.glob(path):
     #print(file)
     img=Image.open(file)
@@ -77,6 +80,7 @@ for i in range(0,len(liste_h_etoiles)):
 
 #print(list_coord_etoiles)
 
+# Affichage de l'image
 x=[]
 y=[]
 for i in range(len(list_coord_etoiles)):
