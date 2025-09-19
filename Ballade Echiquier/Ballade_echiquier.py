@@ -34,20 +34,7 @@ def avance(pos, index_mv):
         print("Erreur, sortie de l'échiquier")
         raise Exception(f"Erreur, sortie de l'échiquier")
     return (x_nv_pos, y_nv_pos)
-    
-    
 
-#------------- Main ---------------
-# r=requests.get('https://pydefis.callicode.fr/defis/BaladeEchiquier/get/EricF6975/0f0e4')
-# print(r.status_code)
-# print(type(r))
-# print(r.content)
-# for l in r.iter_lines():
-#     ligne=l
-# print(ligne)
-# print(type(ligne))
-# ligne=str(ligne)[2:-1]
-# print(ligne)
 
 d= DefisUrl('https://pydefis.callicode.fr/defis/BaladeEchiquier/get/EricF6975/0f0e4', verify=True)
 lignes=d.get()
