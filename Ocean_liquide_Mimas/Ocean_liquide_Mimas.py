@@ -8,11 +8,6 @@ print(r)
 data=r.json()
 print(data)
 
-# with open("C:\\Users\\EFEUERSTEIN\\Documents\\Formations\\Python\\pyDefi\\Ocean_liquide_Mimas\\cartes_test.json", "r") as file:
-#     data=json.load(file)
-# print(data)
-
-
 dict_resultats={} # dictionnaire des resultats toutes cartes
 num_trou=0
 
